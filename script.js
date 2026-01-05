@@ -428,7 +428,7 @@ function loadPhotosFromFolder() {
     const photosGrid = document.getElementById('photosGrid');
     if (!photosGrid) return;
     
-    // Lista de fotos en la carpeta
+    // Lista de fotos en la raíz
     const photoFiles = [
         'WhatsApp Image 2025-12-31 at 8.40.22 PM (1).jpeg',
         'WhatsApp Image 2025-12-31 at 8.40.22 PM.jpeg',
@@ -447,7 +447,7 @@ function loadPhotosFromFolder() {
         photoItem.style.animation = `slideUp 0.6s ease ${index * 0.1}s backwards`;
         
         const img = document.createElement('img');
-        img.src = 'fotos/' + encodeURIComponent(photoName);
+        img.src = encodeURIComponent(photoName);
         img.alt = 'Foto ' + (index + 1);
         img.onerror = function() {
             photoItem.innerHTML = '<div style="width: 100%; height: 200px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">📸</div>';
